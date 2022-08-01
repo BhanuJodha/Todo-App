@@ -1,0 +1,195 @@
+/* Default Section */
+
+* {
+    margin: 0;
+    padding: 0;
+    color: gray;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #56ff0024;
+}
+
+/* Main Section */
+
+main {
+    width: 60rem;
+    margin: auto;
+    background-color: white;
+    min-height: 100vh;
+}
+
+/* Header Section */
+
+header {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    padding: .8rem;
+    border-bottom: 1px solid lightgray;
+}
+
+/* Description Section */
+
+.description {
+    font-weight: 600;
+    padding: .5rem 1rem;
+    border-bottom: 1px solid lightgray;
+}
+
+.description>* {
+    outline: none;
+    border: none;
+    margin-bottom: .3rem;
+    width: 100%;
+}
+
+.description>input::placeholder {
+    color: lightgray;
+}
+
+/* Optional Section */
+
+.optionals {
+    display: flex;
+    border-bottom: 1px solid lightgray;
+}
+
+.optionals>:first-child {
+    border-right: 1px solid lightgray;
+}
+
+.optionals>* {
+    width: 50%;
+    padding: .5rem 1rem;
+}
+
+.optionals>*>* {
+    font-weight: 600;
+    margin-bottom: .3rem;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+/* Buttons Section */
+
+.tray {
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+.tray>* {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: none;
+    height: 3rem;
+    width: 11rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.tray>:first-child {
+    background-color: gray;
+}
+
+.tray>:last-child {
+    background-color: red;
+}
+
+.tray>*:hover {
+    opacity: .8;
+}
+
+/* Card Section */
+
+.card{
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    border-top: 1px solid lightgray;
+    padding: 1rem 0;
+}
+
+.card>input{
+    cursor: pointer;
+}
+
+.content{
+    padding: 0 1rem;
+    flex-grow: 1;
+}
+
+.content>:first-child::first-letter{ 
+    text-transform: capitalize;
+}
+
+.content>:first-child{
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.content>:last-child, .today{
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: .9rem;
+    color: #54737a;
+}
+
+.content>:last-child>span, .today>span{
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    margin-right: .2rem;
+}
+
+.today{
+    font-size: 1rem;
+    justify-content: right;
+    padding: .5rem 1rem;
+    color: black;
+    border-top: 1px solid lightgray;
+}
+
+.type{
+    padding: .5rem;
+    color: white;
+}
+
+.type[data-type="Work"]{
+    background-color: blueviolet;
+}
+
+.type[data-type="Personal"]{
+    background-color: cadetblue;
+}
+
+.type[data-type="School"]{
+    background-color: cornflowerblue;
+}
+
+.type[data-type="Cleaning"]{
+    background-color: plum;
+}
+
+.type[data-type="Other"]{
+    background-color: coral;
+}
+
+
+/* Google Style */
+
+.material-symbols-outlined {
+    color: white;
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 200,
+        'GRAD' 200,
+        'opsz' 40
+}

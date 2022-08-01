@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./css/home.css">
+</head>
+
+<body>
+    <main>
+        <header>
+            Todo App
+        </header>
+
+        <form action="/add-task" method="post">
+            <section class="description">
+                <p>DESCRIPTION</p>
+                <input type="text" name="task" placeholder="What do you need to do?" required>
+            </section>
+            <section class="optionals">
+                <div class="category">
+                    <p>CATEGORY</p>
+                    <select name="type">
+                        <option value="" selected disabled>Choose a category</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Work">Work</option>
+                        <option value="School">School</option>
+                        <option value="Cleaning">Cleaning</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="date">
+                    <p>DUE DATE</p>
+                    <input type="date" name="due_date">
+                </div>
+            </section>
+            <section class="tray">
+                <button type="submit">
+                    <span class="material-symbols-outlined">
+                        add
+                    </span>ADD TASK</button>
+                <button type="submit" form="list-form">
+                    <span class="material-symbols-outlined">
+                        delete
+                    </span>DELETE TASKS</button>
+            </section>
+        </form>
+
+        <form id="list-form" method="post" action="/delete-task">
+            <section class="list">                        
+                <p class="today">
+                    <span class="material-symbols-outlined">
+                        calendar_month
+                    </span>
+                    <%= new Date().toLocaleDateString("en-US", {year: 'numeric' , month: 'long' , day: 'numeric' }) %>
+                </p>
+
+                <% for (let i of data){%>
+                    <div class="card">
+                        <input type="checkbox" name="id" value="<%=i._id%>">
+                        <div class="content">
+                            <p class="task">
+                                <%=i.task%>
+                            </p>
+                            <p>
+                                <% if(i.due_date) {
+                                    let output=i.due_date.toLocaleDateString("en-US", {year: 'numeric' , month: 'long' , day: 'numeric' }); %>
+                                    <span class="material-symbols-outlined">
+                                        calendar_month
+                                    </span>
+                                    <%= output %>
+                                    <%}
+                                    else { %>
+                                        NO DEADLINE
+                                    <%}
+                                %>
+                            </p>
+                        </div>
+                        <%if (i.type){%>
+                            <div class="type" data-type="<%=i.type%>">
+                                <%=i.type%>
+                            </div>
+                            <%}%>
+                    </div>
+                    <%}%>
+            </section>
+        </form>
+    </main>
+
+    <script src="./js/home.js"></script>
+</body>
+
+</html>
