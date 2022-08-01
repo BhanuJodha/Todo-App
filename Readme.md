@@ -13,17 +13,19 @@ INTRODUCTION
 ------------
 
 This is a To-Do app which have some basic functionality like :-
-    * Adding task to database.
-    * Remove task from database.
-    * Categorize task based on there functionality.
+  
+   - Adding task to database.
+   - Remove task from database.
+   - Categorize task based on there functionality.
 
 REQUIREMENTS
 ------------
 
 This project have some special requirements like :-
-    * ejs : "^3.1.8"
-    * express : "^4.18.1"
-    * mongoose : "^6.5.0"
+
+   - ejs : "^3.1.8"
+   - express : "^4.18.1"
+   - mongoose : "^6.5.0"
 
 
 INSTALLATION
